@@ -94,7 +94,8 @@ the published margin.
 reaches 50% (averaged with the next value on an exact tie). No interval is given for the median.
 
 **Shares** (percent producing crops, percent making a loss) are weighted means of a 0/100
-indicator, with the same standard error.
+indicator, with the same standard error. Their intervals are cut at 0% and 100%, because the
+symmetric interval can cross those limits when a share is small and the sample is too.
 
 ## 4. Reliability rules
 

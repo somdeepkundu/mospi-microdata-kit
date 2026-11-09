@@ -21,7 +21,8 @@ First public release. It grew out of a Colab notebook written in June 2026.
   stratified cluster samples, domain estimation, lonely-PSU handling, t-based intervals.
   `subsample_se` for NSSO's two-sub-sample check; `weighted_quantile` (Stata `_pctile` rule).
 - `mospi_kit.nss70`: income from crops by state, January–June 2013, validated against NSSO's
-  KI(70/33); suppression below 30 households; aggregate-only output guard.
+  KI(70/33); suppression below 30 households; share intervals kept within 0–100%;
+  aggregate-only output guard.
 - `mospi_kit.demo`: synthetic files with the real layout, for tests and a no-key demo.
 - `mospi-kit` command line: `search`, `files`, `download`, `extract`, `codebook`, `farm-income`.
 - Colab notebooks: download any dataset; the farm-income worked example.

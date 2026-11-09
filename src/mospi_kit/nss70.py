@@ -422,15 +422,18 @@ def state_table(
             "est_households": float(weight[mask].sum()),
             "est_cultivating_households": float(weight[mask & cultivating].sum()),
         }
-        for measure, (column, scope, _, _) in MEASURES.items():
+        for measure, (column, scope, unit, _) in MEASURES.items():
             dom = mask if scope == "all" else mask & cultivating
             est = ratio_mean(
                 hh[column].to_numpy(), weight, strata=strata, psu=psu, domain=dom, level=level
             )
+            low, high = est.ci_low, est.ci_high
+            if unit == "%":  # a share stays within 0-100 %, whatever a symmetric interval says
+                low, high = max(0.0, low), min(100.0, high)
             row[measure] = est.estimate
             row[f"{measure}_se"] = est.se
-            row[f"{measure}_ci_low"] = est.ci_low
-            row[f"{measure}_ci_high"] = est.ci_high
+            row[f"{measure}_ci_low"] = low
+            row[f"{measure}_ci_high"] = high
             row[f"{measure}_rse"] = est.rse
             if measure == "net_per_cultivator":
                 row["design_df"] = est.df

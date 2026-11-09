@@ -77,6 +77,8 @@ def test_run_on_demo_data_writes_aggregates_only(demo_folder, tmp_path):
     assert (shown["net_per_cultivator_ci_low"] < shown["net_per_cultivator"]).all()
     assert (shown["net_per_cultivator"] < shown["net_per_cultivator_ci_high"]).all()
     assert ((shown["pct_cultivating"] >= 0) & (shown["pct_cultivating"] <= 100)).all()
+    for share in ("pct_cultivating", "pct_loss"):
+        assert (shown[f"{share}_ci_low"] >= 0).all() and (shown[f"{share}_ci_high"] <= 100).all()
 
     payload = json.loads(results.files["json"].read_text(encoding="utf-8"))
     assert payload["status"] == "demo" and payload["schema"] == 1

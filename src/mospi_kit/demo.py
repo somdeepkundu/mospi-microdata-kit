@@ -25,16 +25,45 @@ FILES = {
     "inputs": "Visit 2_Block 6_ particulars of inputs and their expenses for crop production "
     "during July.dta",
 }
-# code: (districts, typical net receipt in ₹ for six months)
+# code: (districts, typical net receipt in ₹ for six months). Arbitrary values that only give the
+# demo a spread across every state and UT; they are not survey results.
 _STATES = {
+    "01": (3, 9000),
+    "02": (3, 11000),
     "03": (6, 90000),
-    "09": (10, 30000),
-    "19": (8, 12000),
-    "27": (8, 25000),
-    "33": (6, 22000),
-    "21": (5, 9000),
     "04": (1, 60000),
+    "05": (2, 10000),
+    "06": (5, 70000),
+    "07": (1, 20000),
+    "08": (8, 40000),
+    "09": (10, 30000),
+    "10": (8, 20000),
+    "11": (1, 8000),
+    "12": (2, 25000),
+    "13": (2, 7000),
+    "14": (2, 8000),
+    "15": (2, 18000),
+    "16": (2, 22000),
+    "17": (2, 35000),
+    "18": (5, 30000),
+    "19": (8, 12000),
+    "20": (4, 9000),
+    "21": (5, 9000),
+    "22": (4, 20000),
+    "23": (7, 32000),
+    "24": (6, 30000),
+    "25": (1, 6000),
     "26": (1, 5000),
+    "27": (8, 25000),
+    "28": (5, 38000),
+    "29": (6, 45000),
+    "30": (1, 14000),
+    "31": (1, 4000),
+    "32": (4, 28000),
+    "33": (6, 22000),
+    "34": (1, 20000),
+    "35": (1, 12000),
+    "36": (4, 33000),
 }
 _ID_COLS = [
     "HHID",
@@ -74,7 +103,7 @@ def make_visit2_demo(
     for state, (districts, scale) in _STATES.items():
         for district in range(1, districts + 1):
             for sub in range(1, 4):
-                villages = 1 if (state == "26" and sub == 3) else 2
+                villages = 1 if (state in {"26", "31"} and sub == 3) else 2
                 for village in range(villages):
                     fsu += 1
                     subsample = str(village + 1)
