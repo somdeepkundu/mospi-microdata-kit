@@ -1,0 +1,16 @@
+name: New survey recipe
+description: Suggest an indicator from another MoSPI survey
+labels: [recipe]
+body:
+  - type: input
+    attributes:
+      label: Survey and idno
+      placeholder: DDI-IND-MOSPI-NSSO-77Rnd-Sch33.1-...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Indicator
+      description: What should be estimated, for which groups, and which published figure can it be checked against?
+    validations:
+      required: true

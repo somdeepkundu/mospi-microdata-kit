@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below, and cite the survey you analysed."
+title: "mospi-microdata-kit: download, read and analyse unit-level survey data from microdata.gov.in"
+type: software
+authors:
+  - family-names: Kundu
+    given-names: Somdeep
+    email: somdeepkundu@gmail.com
+    affiliation: "RuDRA Lab, Centre for Technology Alternatives for Rural Areas (C-TARA), Indian Institute of Technology Bombay"
+version: 1.0.0
+date-released: 2026-11-09
+license: MIT
+repository-code: "https://github.com/somdeepkundu/mospi-microdata-kit"
+url: "https://somdeepkundu.github.io/farm-income/"
+keywords:
+  - MoSPI
+  - NSS
+  - microdata
+  - India
+  - survey statistics
+  - agricultural households
+references:
+  - type: data
+    title: "Situation Assessment Survey of Agricultural Households, NSS 70th Round, January–December 2013"
+    authors:
+      - name: "National Statistical Office, Ministry of Statistics and Programme Implementation, Government of India"
+    year: 2014
+    url: "https://microdata.gov.in/NADA/index.php/catalog/134"

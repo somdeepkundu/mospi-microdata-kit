@@ -1,0 +1,43 @@
+# --- Survey data: never commit (see docs/DATA_TERMS.md) ---
+data/
+input/
+output/
+downloads/
+*.dta
+*.sav
+*.zsav
+*.por
+*.sas7bdat
+*.xpt
+*.zip
+*.part
+MANIFEST.json
+codebook.csv
+results_bundle.zip
+# notebook run outputs; publish results deliberately, not by accident
+/results/*
+!/results/README.md
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.env
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.ipynb_checkpoints/
+
+# --- OS / editors ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

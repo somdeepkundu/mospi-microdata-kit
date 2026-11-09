@@ -1,0 +1,27 @@
+name: Something does not work
+description: A download, a table or an estimate went wrong
+labels: [bug]
+body:
+  - type: checkboxes
+    attributes:
+      label: Before you post
+      options:
+        - label: I have not pasted any household or person records, or my API key.
+          required: true
+  - type: textarea
+    attributes:
+      label: What you ran
+      description: The code, command or notebook step. Replace your key with ***.
+      render: python
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What happened
+      description: The full error message, or what you expected instead.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Versions
+      description: Output of `python -c "import mospi_kit, sys; print(mospi_kit.__version__, sys.version)"`
